@@ -1,0 +1,40 @@
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: lightsteelblue;
+}
+
+.slider__image img {
+    width: 85vw;
+    height: 50vw;
+}
+
+.arrow {
+    position: absolute;
+    background: gray;
+    border-radius: 50%;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.left {
+    left: 0.5rem;
+}
+
+.right {
+    right: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .slider {
+        overflow: hidden;
+    }
+
+    .slider__image img {
+        width: 90vw;
+    }
+}
