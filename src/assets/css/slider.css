@@ -13,7 +13,8 @@
 
 .arrow {
     position: absolute;
-    background: gray;
+    /* background: gray; */
+    background: lightblue;
     border-radius: 50%;
 }
 
@@ -35,6 +36,7 @@
     }
 
     .slider__image img {
-        width: 90vw;
+        width: 70vw;
+        height: 30vw;
     }
 }

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../assets/css/slider.css";
-import image1 from "../assets/images/ecom1.png";
-import image2 from "../assets/images/ecom2.png";
-import image3 from "../assets/images/ecom3.jpg";
+import image1 from "../assets/images/ecom1.webp";
+import image2 from "../assets/images/ecom2.webp";
+import image3 from "../assets/images/ecom3.webp";
 import { MdArrowLeft, MdArrowRight } from "react-icons/md";
 
 const images = [image1, image2, image3];

@@ -1,0 +1,30 @@
+.header a {
+    color: #fff;
+}
+
+.grid-container {
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-template-areas: "items items";
+}
+
+.header {
+    background-color: #333;
+}
+
+.products__nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.products__item {
+    margin: 1rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .grid-container {
+        grid-column: repeat(3, 1fr);
+        grid-template-areas: "items items items ";
+    }
+}

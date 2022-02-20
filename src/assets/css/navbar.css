@@ -19,6 +19,7 @@
     background-color: #000;
     min-width: 7rem;
     z-index: 9999;
+    border-radius: 5px;
 }
 
 .user-menu__item {
