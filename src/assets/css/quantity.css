@@ -1,0 +1,23 @@
+.quantity {
+    font-size: 2rem;
+    display: flex;
+}
+
+.quantity__btn {
+    padding: 0.5rem;
+    outline: 0;
+    border: none;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.quantity__btn--increment {
+    background-color: blue;
+    color: #fff;
+}
+
+.quantity__btn--decrement {
+    background-color: red;
+    color: #fff;
+}

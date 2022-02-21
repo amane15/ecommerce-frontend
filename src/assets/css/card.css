@@ -1,41 +1,41 @@
-.product-container {
+.card-container {
     margin: 1rem;
     box-shadow: 0 0 15px -5px;
     border-radius: 5px;
     transition: transform 0.5s ease-in-out;
 }
 
-.product__image img {
+.card__image img {
     height: 15rem;
     width: 100%;
     border-radius: 5px;
 }
 
-.product__title,
-.product__description,
-.product__category {
+.card__title,
+.card__description,
+.card__category {
     margin: 0.5rem;
 }
 
-.product__button {
+.card__button {
     display: flex;
     justify-content: flex-start;
     margin: 0.5rem;
 }
 
-.product__button button {
+.card__button button {
     margin: 1rem;
 }
 
 @media screen and (min-width: 768px) {
-    .product-container {
+    .card-container {
         margin: 2.5rem;
     }
-    .product__image img {
+    .card__image img {
         height: 30rem;
     }
 
-    .product-container:hover {
+    .card-container:hover {
         cursor: pointer;
         transform: scale(1.1);
     }
