@@ -52,6 +52,16 @@ a {
     color: #fff;
 }
 
+.btn--secondary {
+    background-color: #208637;
+    color: #fff;
+}
+
+.btn--secondary:hover {
+    background-color: #187c2f;
+    color: #fff;
+}
+
 .btn--danger {
     background-color: #f44336;
     color: #fff;
