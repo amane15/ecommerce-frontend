@@ -34,4 +34,30 @@ a {
     border: 0;
     outline: 0;
     border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: #008cba;
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background-color: #036c8f;
+    color: #fff;
+}
+
+.btn--danger {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.btn--danger:hover {
+    background-color: #c9261a;
+    color: #fff;
 }

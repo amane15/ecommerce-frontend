@@ -1,0 +1,7 @@
+.form-container .profile__btn {
+    margin-right: 2rem;
+}
+
+.form-container textarea {
+    resize: none;
+}

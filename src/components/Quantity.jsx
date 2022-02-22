@@ -14,7 +14,6 @@ const Quantity = ({ value }) => {
 
     return (
         <div className="quantity">
-            <h3>Quantity: </h3>
             <button
                 className="quantity__btn quantity__btn--decrement"
                 onClick={handleDecrement}
@@ -22,7 +21,7 @@ const Quantity = ({ value }) => {
                 -
             </button>
 
-            <p> {quantity}</p>
+            <p className="quantity__value"> {quantity}</p>
             <button
                 className="quantity__btn quantity__btn--increment"
                 onClick={handleIncrement}

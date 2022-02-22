@@ -1,23 +1,31 @@
 .quantity {
     font-size: 2rem;
     display: flex;
+    /* padding: 1rem; */
+    margin: 1rem 0;
 }
 
 .quantity__btn {
     padding: 0.5rem;
     outline: 0;
     border: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.quantity__value {
+    padding: 0.5rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .quantity__btn--increment {
-    background-color: blue;
+    background-color: #008cba;
     color: #fff;
 }
 
 .quantity__btn--decrement {
-    background-color: red;
+    background-color: #f44336;
     color: #fff;
 }
