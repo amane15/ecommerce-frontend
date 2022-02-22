@@ -1,29 +1,25 @@
 import "./App.css";
-import Card from "./components/Card";
-import Cart from "./components/Cart";
-import LoginForm from "./components/LoginForm";
 import Navbar from "./components/Navbar";
-import Ordered from "./components/Ordered";
-import Product from "./components/Product";
-import Products from "./components/Products";
+import Cart from "./components/Cart";
 import Profile from "./components/Profile";
-import Quantity from "./components/Quantity";
+import HomePage from "./components/HomePage";
+import Ordered from "./components/Ordered";
 import RegisterForm from "./components/RegisterForm";
-import Slider from "./components/Slider";
+import LoginForm from "./components/LoginForm";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
     return (
         <>
-            {/* <Navbar /> */}
-            {/* <Slider />
-            <Products /> */}
-            {/* <Product /> */}
-            {/* <Quantity value={10} /> */}
-            {/* <Cart /> */}
-            {/* <Ordered /> */}
-            {/* <RegisterForm /> */}
-            {/* <LoginForm /> */}
-            <Profile />
+            <Navbar />
+            <Routes>
+                <Route path="/login" element={<LoginForm />} />
+                <Route path="/register" element={<RegisterForm />} />
+                <Route path="/orders" element={<Ordered />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/" element={<HomePage />} />
+            </Routes>
         </>
     );
 }

@@ -18,8 +18,8 @@ const Card = () => {
             </div>
             <div className="card__category">Category</div>
             <div className="card__button">
-                <button>Add to Cart</button>
-                <button>Buy Now</button>
+                <button className="btn btn--primary">Add to Cart</button>
+                <button className="btn btn--secondary">Buy Now</button>
             </div>
         </div>
     );
