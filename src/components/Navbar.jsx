@@ -1,48 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { QueryContext } from "../contexts/QueryContext";
 import { RiShoppingCart2Fill, RiUserFill } from "react-icons/ri";
 import { FcShop } from "react-icons/fc";
+import { NavLink, useNavigate } from "react-router-dom";
+import CartBadge from "./CartBadge";
+import UserMenu from "./UserMenu";
 import "../assets/css/navbar.css";
-import { Link } from "react-router-dom";
 
-const UserMenu = () => (
-    <>
-        <ul className="list user-menu scale-up-center">
-            <li className="user-menu__item">
-                <Link to="/profile">Profile</Link>
-            </li>
-            <li className="user-menu__item">
-                <Link to="/orders">Orders</Link>
-            </li>
-            <li className="user-menu__item">
-                <Link to="/register">Register</Link>
-            </li>
-            <li className="user-menu__item">
-                <Link to="/login">
-                    <button className="user-menu__btn btn btn--primary">
-                        Log In
-                    </button>
-                </Link>
-            </li>
-            <li className="user-menu__item">
-                <Link to="/logout">
-                    <button className="user-menu__btn btn btn--danger">
-                        Log Out
-                    </button>
-                </Link>
-            </li>
-        </ul>
-    </>
-);
+const Navbar = ({ user }) => {
+    const { query, setQuery, toggle, setToggle } = useContext(QueryContext);
+    const navigate = useNavigate();
 
-const Navbar = () => {
-    const [toggle, setToggle] = useState(false);
+    const handleClick = (query) => {
+        navigate("/", { state: query });
+    };
 
     return (
         <>
             <nav className="navbar">
-                <Link to="/">
+                <NavLink to="/">
                     <FcShop className="nav__logo" color="#fff" size={24} />
-                </Link>
+                </NavLink>
                 <div className="search-bar">
                     <input
                         className="nav__input"
@@ -50,12 +28,21 @@ const Navbar = () => {
                         name=""
                         id=""
                         placeholder="Search..."
+                        onChange={(event) => {
+                            setQuery(event.target.value);
+                        }}
                     />
-                    <button className="nav__btn">Search</button>
+                    <button
+                        onClick={() => handleClick(query)}
+                        className="nav__btn"
+                    >
+                        Search
+                    </button>
                 </div>
-                <Link to="/cart" className="cart">
+                <NavLink to="/cart" className="cart">
                     <RiShoppingCart2Fill color="#fff" size={24} />
-                </Link>
+                    {user && <CartBadge />}
+                </NavLink>
                 <RiUserFill
                     className="user"
                     color="#fff"
@@ -64,7 +51,7 @@ const Navbar = () => {
                     style={{ cursor: "pointer" }}
                 />
             </nav>
-            {toggle && <UserMenu />}
+            {toggle && <UserMenu user={user} />}
         </>
     );
 };

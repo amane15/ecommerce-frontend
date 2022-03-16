@@ -1,47 +1,39 @@
-import React from "react";
-import "../assets/css/products.css";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
+import { getProducts } from "../services/productService";
+import "../assets/css/products.css";
 
-const Categories = () => {
-    return (
-        <>
-            <div className="header">
-                <ul className="list products__nav">
-                    <li className="products__item">
-                        <a href="/#">Home & kitchen</a>
-                    </li>
-                    <li className="products__item">
-                        <a href="/#">Electronics</a>
-                    </li>
-                    <li className="products__item">
-                        <a href="/#">Fashion</a>
-                    </li>
-                    <li className="products__item">
-                        <a href="/#">Books</a>
-                    </li>
-                </ul>
-            </div>
-        </>
-    );
+const filteredProducts = (products, query) => {
+    const filtered = products.filter((product) => {
+        if (query === "") return product;
+        else if (product.title.toLowerCase().includes(query.toLowerCase())) {
+            return product;
+        }
+    });
+    return filtered;
 };
 
-const Products = () => {
+const Products = ({ query }) => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        async function loadProducts() {
+            const { data: products } = await getProducts();
+            setProducts(products);
+        }
+        loadProducts();
+    }, []);
+
+    const filtered = filteredProducts(products, query);
+
     return (
         <>
-            <Categories />
             <div className="grid-container">
-                <div className="items">
-                    <Card />
-                </div>
-                <div className="items">
-                    <Card />
-                </div>
-                <div className="items">
-                    <Card />
-                </div>
-                <div className="items">
-                    <Card />
-                </div>
+                {filtered.map((product) => (
+                    <div key={product._id}>
+                        <Card product={product} />
+                    </div>
+                ))}
             </div>
         </>
     );

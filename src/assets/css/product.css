@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 15px -5px;
+    border-radius: 5px;
 }
 
 .product__details {
@@ -28,6 +29,10 @@
     line-height: 1.4;
 }
 
+.product__price {
+    margin: 0.5rem 0;
+}
+
 .product__details p,
 .product__quantity {
     padding: 0.5rem;
@@ -47,15 +52,21 @@
 
 @media screen and (min-width: 768px) {
     .product-container {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         box-shadow: 0 0 15px -5px;
         position: relative;
-        height: 100vh;
     }
 
     .product__details {
-        width: 50%;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .product__image img {
+        width: 100%;
+        height: 50rem;
+        border-radius: 5px;
     }
 
     .product__btn {

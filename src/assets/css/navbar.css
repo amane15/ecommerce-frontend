@@ -37,7 +37,7 @@
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    border-radius: 3rem;
+    border-radius: 5px;
     flex-grow: 0.4;
     margin: 0.5rem;
 }
@@ -53,10 +53,24 @@
 .nav__btn {
     border: none;
     outline: none;
-    border-radius: 3rem;
+    border-radius: 5px;
     padding: 1rem;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    /* background-color: #edb61f; */
+    background-color: #d6a909;
+}
+
+.nav__btn:hover {
+    cursor: pointer;
+    background-color: #e8b910;
+}
+
+.cart__badge {
+    position: relative;
+    right: 0.5rem;
+    left: 0;
+    top: -1.5rem;
 }
 
 @media screen and (min-width: 768px) {

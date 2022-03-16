@@ -1,25 +1,28 @@
 import React from "react";
-import image from "../assets/images/phone.jpeg";
-// import laptop from "../assets/images/laptop.jpeg";
-
+import { Link } from "react-router-dom";
+import Button from "./Button";
+import { FaRupeeSign } from "react-icons/fa";
 import "../assets/css/card.css";
 
-const Card = () => {
+const Card = ({ product }) => {
     return (
         <div className="card-container">
-            <div className="card__image">
-                <img src={image} alt="" />
-            </div>
-            <div className="card__title">
-                <h3>Iphone</h3>
-            </div>
-            <div className="card__description">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div className="card__category">Category</div>
+            <Link to={`/product/${product._id}`}>
+                <div className="card__image">
+                    <img src={product.img} alt="" />
+                </div>
+                <div className="card__title">
+                    <h2>{product.title}</h2>
+                </div>
+                <div className="card__price">
+                    <h3>
+                        <FaRupeeSign size={15} />
+                        {product.price}
+                    </h3>
+                </div>
+            </Link>
             <div className="card__button">
-                <button className="btn btn--primary">Add to Cart</button>
-                <button className="btn btn--secondary">Buy Now</button>
+                <Button id={product._id} buttonName="Buy Now" />
             </div>
         </div>
     );

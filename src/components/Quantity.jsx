@@ -1,15 +1,23 @@
 import React, { useState } from "react";
+import { updateQuantity } from "../services/cartService";
 import "../assets/css/quantity.css";
 
-const Quantity = ({ value }) => {
+const Quantity = ({ product, value }) => {
     const [quantity, setQuantity] = useState(value);
 
-    const handleIncrement = () => {
+    const handleIncrement = async () => {
         setQuantity(quantity + 1);
+        await updateQuantity(product, quantity + 1);
+        window.location = "/cart";
     };
 
-    const handleDecrement = () => {
-        if (quantity !== 0) setQuantity(quantity - 1);
+    const handleDecrement = async () => {
+        if (quantity !== 0) {
+            setQuantity(quantity - 1);
+            await updateQuantity(product, quantity - 1);
+            window.location = "/cart";
+            return;
+        }
     };
 
     return (

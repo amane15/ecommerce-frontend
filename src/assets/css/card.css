@@ -12,20 +12,34 @@
 }
 
 .card__title,
-.card__description,
-.card__category {
-    margin: 0.5rem;
+.card__price {
+    color: #000;
+    margin: 0.5rem 1rem;
+}
+
+.card__price h3 {
+    font-size: 1.5rem;
+}
+
+.card__price {
+    margin: 0.5rem 1rem;
 }
 
 .card__button {
     display: flex;
-    justify-content: flex-start;
-    margin: 0.5rem;
+    justify-content: flex-end;
+    margin: 1rem 1rem 1rem 1rem;
 }
 
 .card__button button {
-    margin: 1rem;
-    font-size: 1rem;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+}
+
+@media screen and (min-width: 400px) {
+    .card__button button {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -33,7 +47,7 @@
         margin: 2.5rem;
     }
     .card__image img {
-        height: 30rem;
+        height: 25rem;
     }
 
     .card-container:hover {
@@ -44,5 +58,14 @@
     .card__button button {
         padding: 1rem;
         font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-container:hover {
+        transform: scale(1.1);
+    }
+
+    .card__price {
+        font-size: 1.5rem;
     }
 }
