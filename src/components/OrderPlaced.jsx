@@ -1,14 +1,16 @@
+import React, { useEffect } from "react";
 import { BsFillCartCheckFill } from "react-icons/bs";
 import { emptyCart } from "../services/cartService";
-import { toast } from "react-toastify";
 import "../assets/css/orderplaced.css";
 
-const placeOrder = async () => {
-    const { data } = await emptyCart();
-};
-
 const OrderPlaced = () => {
-    placeOrder();
+    useEffect(() => {
+        async function placeOrder() {
+            await emptyCart();
+        }
+        placeOrder();
+    }, []);
+
     return (
         <div className="orderplaced-container">
             <BsFillCartCheckFill size={100} color="green" />
