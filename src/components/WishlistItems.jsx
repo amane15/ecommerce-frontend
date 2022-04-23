@@ -30,7 +30,10 @@ const WishlistItems = ({ product }) => {
                         >
                             Remove from Wishlist
                         </button>
-                        <Button id={product._id} />
+                        <Button
+                            className="wishlist-buy__btn"
+                            id={product._id}
+                        />
                     </div>
                 </div>
             </div>
