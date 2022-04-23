@@ -19,6 +19,14 @@ const UserMenu = ({ user }) => {
                                 {user.name}
                             </NavLink>
                         </li>
+                        <li className="user-menu__item">
+                            <NavLink
+                                onClick={() => setToggle(!toggle)}
+                                to="/wishlist"
+                            >
+                                Wishlist
+                            </NavLink>
+                        </li>
                         {user.isAdmin && (
                             <li className="user-menu__item">
                                 <NavLink

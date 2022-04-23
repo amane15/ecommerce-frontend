@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import { FaRupeeSign } from "react-icons/fa";
 import "../assets/css/card.css";
+import AddToWishlist from "./AddToWishlist";
 
 const Card = ({ product }) => {
     return (
@@ -14,6 +15,7 @@ const Card = ({ product }) => {
                 <div className="card__title">
                     <h2>{product.title}</h2>
                 </div>
+
                 <div className="card__price">
                     <h3>
                         <FaRupeeSign size={15} />
@@ -22,6 +24,7 @@ const Card = ({ product }) => {
                 </div>
             </Link>
             <div className="card__button">
+                <AddToWishlist product={product}  />
                 <Button id={product._id} buttonName="Buy Now" />
             </div>
         </div>

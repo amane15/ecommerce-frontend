@@ -17,6 +17,7 @@ import ProductAdd from "./components/ProductAdd";
 import AdminRoute from "./components/AdminRoute";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
+import Wishlist from "./components/Wishlist";
 
 const App = () => {
     const [user, setUser] = useState(null);
@@ -60,6 +61,7 @@ const App = () => {
                         <Route path="/orderplaced" element={<OrderPlaced />} />
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/cart" element={<Cart />} />
+                        <Route path="/wishlist" element={<Wishlist />} />
                     </Route>
                     <Route path="/" element={<HomePage />} />
                 </Routes>

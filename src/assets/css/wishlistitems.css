@@ -1,0 +1,17 @@
+.wishlist-item__quantity {
+    margin: 1rem 0;
+}
+
+.wishlist-item__details {
+    position: relative;
+}
+
+.wishlist-item__btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.remove-wishlist__btn {
+    margin-right: 1rem;
+}

@@ -25,7 +25,6 @@ export function updateQuantity(item, quantity) {
 }
 
 export function updateCart(item) {
-    console.log(item.quantity);
     return http.put(`${apiEndPoint}/updateCart`, item);
 }
 
