@@ -4,6 +4,7 @@ import { getProductWithId } from "../services/productService";
 import Button from "./Button";
 import { FaRupeeSign } from "react-icons/fa";
 import "../assets/css/product.css";
+import AddToWishlist from "./AddToWishlist";
 
 const Product = () => {
     const { id } = useParams();
@@ -33,6 +34,7 @@ const Product = () => {
                         {product.description}
                     </p>
                     <div className="product__btn">
+                        <AddToWishlist product={product} />
                         <Button id={id} buttonName="Buy Now" />
                     </div>
                 </div>
