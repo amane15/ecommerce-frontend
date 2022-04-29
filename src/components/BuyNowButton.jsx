@@ -11,13 +11,8 @@ const handleClick = async (id, cartCount, setCartCount) => {
     const { data: cart } = await getCart();
     for (let item of cart) {
         if (id === item.productId) {
-            // item.quantity += 1;
-            // const { data } = await updateCart(item);
-            // if (data) toast.success(data);
             window.location = "/cart";
             return;
-            // toast.info("Product already exists in cart");
-            // return;
         }
     }
     const product = await addToCart(id);
