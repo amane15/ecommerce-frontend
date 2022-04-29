@@ -15,9 +15,10 @@ import Product from "./components/Product";
 import OrderPlaced from "./components/OrderPlaced";
 import ProductAdd from "./components/ProductAdd";
 import AdminRoute from "./components/AdminRoute";
+import Wishlist from "./components/Wishlist";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
-import Wishlist from "./components/Wishlist";
+import Tippy from "@tippyjs/react";
 
 const App = () => {
     const [user, setUser] = useState(null);

@@ -2,6 +2,8 @@ import React from "react";
 import { getCurrentUser } from "../services/authService";
 import { getWishlist, addToWishlist } from "../services/wishlistService";
 import { toast } from "react-toastify";
+import { RiHeartAddFill } from "react-icons/ri";
+import Tippy from "@tippyjs/react";
 
 const handleClick = async (id) => {
     if (!getCurrentUser()) window.location = "/login";
@@ -16,15 +18,22 @@ const handleClick = async (id) => {
     if (product) toast.success(product.data);
 };
 
-const AddToWishlist = ({ product }) => {
+const AddToWishlist = ({ id }) => {
     return (
         <>
-            <button
-                className="btn btn--outlined"
-                onClick={() => handleClick(product._id)}
-            >
-                Add To Wishlist
-            </button>
+            <Tippy content="Add To Wishlist">
+                <div
+                    style={{
+                        display: "flex",
+                        alignSelf: "center",
+                        marginRight: "1rem",
+                        cursor: "pointer",
+                    }}
+                    onClick={() => handleClick(id)}
+                >
+                    <RiHeartAddFill size={24} color="black" />
+                </div>
+            </Tippy>
         </>
     );
 };

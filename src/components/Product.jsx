@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProductWithId } from "../services/productService";
-import Button from "./Button";
+import AddToCartButton from "./AddToCartButton";
 import { FaRupeeSign } from "react-icons/fa";
-import "../assets/css/product.css";
 import AddToWishlist from "./AddToWishlist";
+import BuyNowButton from "./BuyNowButton";
+import "../assets/css/product.css";
 
 const Product = () => {
     const { id } = useParams();
@@ -34,8 +35,9 @@ const Product = () => {
                         {product.description}
                     </p>
                     <div className="product__btn">
-                        <AddToWishlist product={product} />
-                        <Button id={id} buttonName="Buy Now" />
+                        <AddToWishlist className="test" id={id} />
+                        <AddToCartButton id={id} />
+                        <BuyNowButton id={id} />
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "./Button";
 import { FaRupeeSign } from "react-icons/fa";
 import { deleteProduct } from "../services/wishlistService";
+import BuyNowButton from "./BuyNowButton";
 import "../assets/css/item.css";
 import "../assets/css/wishlistitems.css";
 
@@ -30,7 +30,7 @@ const WishlistItems = ({ product }) => {
                         >
                             Remove from Wishlist
                         </button>
-                        <Button
+                        <BuyNowButton
                             className="wishlist-buy__btn"
                             id={product._id}
                         />
