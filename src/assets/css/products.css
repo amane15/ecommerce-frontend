@@ -27,6 +27,12 @@
     font-size: 1.2rem;
 }
 
+.product-loading {
+    margin: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (min-width: 768px) {
     .grid-container {
         grid-column: 1;

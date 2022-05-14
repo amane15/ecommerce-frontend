@@ -31,6 +31,12 @@
     letter-spacing: 1px;
 }
 
+.cart-loading {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (min-width: 768px) {
     .cart-container {
         flex-direction: row;

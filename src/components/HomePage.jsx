@@ -10,7 +10,7 @@ const HomePage = () => {
     return (
         <>
             <Slider />
-            <Categories />
+            {/* <Categories /> */}
             <Products query={query || ""} />
         </>
     );

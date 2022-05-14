@@ -4,6 +4,7 @@ import { getProductWithId } from "../services/productService";
 import { Link } from "react-router-dom";
 import { getWishlist } from "../services/wishlistService";
 import WishlistItems from "./WishlistItems";
+import SyncLoader from "react-spinners/SyncLoader";
 import "../assets/css/cart.css";
 
 const handleClick = (cart, total) => {
@@ -37,6 +38,7 @@ const FilledWishlist = ({ wishlist }) => {
 
 const Wishlist = () => {
     const [wishlist, setWishlist] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         async function loadWishlist() {
@@ -47,15 +49,24 @@ const Wishlist = () => {
                 i.data.quantity = product.quantity;
                 if (i.data.quantity > 0) wishlist.push(i.data);
             }
+            setLoading(true);
             setWishlist(wishlist);
         }
         loadWishlist();
     }, []);
 
-    return wishlist.length ? (
+    const show = wishlist.length ? (
         <FilledWishlist wishlist={wishlist} />
     ) : (
         <EmptyWishlist />
+    );
+
+    return loading ? (
+        show
+    ) : (
+        <div className="cart-loading">
+            <SyncLoader color="gray" />
+        </div>
     );
 };
 

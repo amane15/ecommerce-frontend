@@ -6,6 +6,7 @@ import { getCart } from "../services/cartService";
 import { getProductWithId } from "../services/productService";
 import { placeOrder } from "../services/orderService";
 import { Link } from "react-router-dom";
+import SyncLoader from "react-spinners/SyncLoader";
 import "../assets/css/cart.css";
 
 const handleClick = async (cart, total) => {
@@ -56,6 +57,7 @@ const FilledCart = ({ cart, total }) => {
 const Cart = () => {
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         async function loadCart() {
@@ -68,16 +70,25 @@ const Cart = () => {
                 if (i.data.quantity > 0) cart.push(i.data);
                 total += i.data.price * i.data.quantity;
             }
+            setLoading(true);
             setCart(cart);
             setTotal(total);
         }
         loadCart();
     }, []);
 
-    return cart.length ? (
+    const show = cart.length ? (
         <FilledCart cart={cart} total={total} />
     ) : (
         <EmptyCart />
+    );
+
+    return loading ? (
+        show
+    ) : (
+        <div className="cart-loading">
+            <SyncLoader color="gray" />
+        </div>
     );
 };
 
