@@ -6,11 +6,9 @@ import { QueryContext } from "../contexts/QueryContext";
 
 const HomePage = () => {
     const { query } = useContext(QueryContext);
-    // console.log(query);
     return (
         <>
             <Slider />
-            {/* <Categories /> */}
             <Products query={query || ""} />
         </>
     );
